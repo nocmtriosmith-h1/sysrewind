@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "bundle": {
+    "targets": ["nsis", "msi"],
+    "resources": {
+      "vendor/PawnIO_setup.exe": "PawnIO_setup.exe",
+      "windows/install-sensors.ps1": "install-sensors.ps1",
+      "windows/uninstall-sensors.ps1": "uninstall-sensors.ps1"
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "perMachine",
+        "installerHooks": "./windows/hooks.nsh",
+        "languages": ["Vietnamese", "English"],
+        "displayLanguageSelector": false
+      },
+      "wix": {
+        "language": "en-US",
+        "fragmentPaths": ["./windows/sensors.wxs"],
+        "componentRefs": ["SysrewindSensorsComponent"]
+      }
+    }
+  }
+}

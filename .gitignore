@@ -1,0 +1,8 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+src-tauri/target-test/
+src-tauri/vendor/
+PROGRESS.md
+docs/*.tmp.png
